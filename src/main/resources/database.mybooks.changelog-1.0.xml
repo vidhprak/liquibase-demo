@@ -16,4 +16,9 @@
 		<sqlFile path="C:\WS_LB1\liquibase-poc\src\main\sql\mybooks\createBookTable.sql" />
 	</changeSet>
 	
+	<changeSet id="3" author="vidhprak" context="dev">
+		<comment>Insert data into book_info1 table</comment>
+		<sqlFile path="..\sql\mybooks\bookData.sql" />
+	</changeSet>
+	
 </databaseChangeLog>
