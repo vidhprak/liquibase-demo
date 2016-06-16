@@ -45,7 +45,7 @@
 				<configuration>
 					<!-- Specifies the change log file to use for Liquibase. -->
 					<changeLogFile>${liquibase.changeLogFile}</changeLogFile> <!-- java.lang.String -->
-					<!-- Flag for forcing the checksums to be cleared from teh DatabaseChangeLog table. -->
+					<!-- Flag for forcing the checksums to be cleared from the DatabaseChangeLog table. -->
 					<clearCheckSums>${liquibase.clearCheckSums}</clearCheckSums> <!-- boolean -->
 					<!-- The Liquibase contexts to execute, which can be "," separated if multiple contexts are required. 
 					If no context is specified then ALL contexts will be executed -->
@@ -135,6 +135,7 @@
 					<username>${liquibase.username}</username>
 					<!-- The database password to use to connect to the specified database. -->
 					<password>${liquibase.password}</password>
+					<testSuiteName>All</testSuiteName>
 		</configuration>
 		
 		<executions>
