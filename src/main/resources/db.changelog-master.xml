@@ -1,0 +1,39 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet author="vidhprak (generated)" id="1466073845448-1" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createSequence cacheSize="20" cycle="false" incrementBy="1" maxValue="9999999999999999999999999999" minValue="1" ordered="true" sequenceName="USER_INFO_ID_SEQ" startValue="1"/>
+    </changeSet>
+    <changeSet author="vidhprak (generated)" id="1466073845448-2" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable remarks="This table stores all book information." tableName="BOOK_INFO1">
+            <column name="ID" remarks="A unique book identifier." type="NUMBER(*, 0)"/>
+            <column name="BOOK_NAME" remarks="The book name." type="VARCHAR2(50 BYTE)"/>
+            <column name="AUTHOR_NAME" remarks="The author of the book" type="VARCHAR2(50 BYTE)"/>
+            <column name="DATE" remarks="The date when the book was bought." type="TIMESTAMP(6)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="vidhprak (generated)" id="1466073845448-3" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createTable remarks="This table stores all personal user information." tableName="USER_INFO">
+            <column name="ID" remarks="A unique user identifier." type="NUMBER(*, 0)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FIRST_NAME" remarks="The first name." type="VARCHAR2(50 BYTE)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="LAST_NAME" remarks="The last name." type="VARCHAR2(50 BYTE)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="BIRTHDAY" remarks="The date of birth." type="TIMESTAMP(6)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PHOTO_DATA1" remarks="Path to the storage location of the users photo, if uploaded." type="VARCHAR2(100 BYTE)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="vidhprak (generated)" id="1466073845448-4" objectQuotingStrategy="QUOTE_ALL_OBJECTS">
+        <createIndex indexName="PK_USER_INFO" tableName="USER_INFO" unique="true">
+            <column name="ID"/>
+        </createIndex>
+        <addPrimaryKey columnNames="ID" constraintName="PK_USER_INFO" forIndexName="PK_USER_INFO" tableName="USER_INFO"/>
+    </changeSet>
+	
+	<include file="db.customer.changelog-1.0.xml"/>
+</databaseChangeLog>
