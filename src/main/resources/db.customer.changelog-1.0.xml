@@ -10,6 +10,11 @@
 		<changeSet id="1" author="vidhprak" context="dev">
 		<comment>Create a new CUSTOMER_info table</comment>
 		<sqlFile path="..\sql\bankCustomer\createCustomerTable.sql" />
+	</changeSet>
+
+	<changeSet id="2" author="vidhprak" context="dev">
+		<comment>Insert data into the CUSTOMER_info table</comment>
+		<sqlFile path="..\sql\bankCustomer\CustomerData.sql" />
 	</changeSet>	
 		
 </databaseChangeLog>
